@@ -41,7 +41,7 @@ class ServiceRunner extends EventEmitter
         ..on 'error', (message) ~> @emit 'error', error-message: message
         /* Ignores any sub-path including dotfiles.
         '[\/\\]' accounts for both windows and unix systems, the '\.' matches a single '.', and the final '.' matches any character. */
-    @watcher = watch @config.root, ignore-initial: yes, ignored: [/.*\/node_modules\/.*/, /(^|[\/\\])\../] 
+    @watcher = watch @config.root, ignore-initial: yes, ignored: [/.*\/node_modules\/.*/, /(^|[\/\\])\../]
       ..on 'add', (added-path) ~>
         @logger.log name: 'exo-run', text: "Restarting service '#{@name}' because #{added-path} was created"
         @restart!
@@ -54,7 +54,7 @@ class ServiceRunner extends EventEmitter
 
 
   restart: ->
-    @docker-runner.docker-container.kill!
+    @docker-runner.running-service.stop-container!
     @watcher.close!
     new ObservableProcess(call-args(DockerHelper.get-build-command author: @docker-config.author, name: @docker-config.image),
                           cwd: @config.root,
