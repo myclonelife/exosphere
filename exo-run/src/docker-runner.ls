@@ -39,20 +39,6 @@ class DockerRunner extends EventEmitter
     @logger.log {@name, text, trim: yes}
 
 
-  # _create-run-command: ->
-  #   command = "
-  #     docker run
-  #       --name=#{@docker-config.env.SERVICE_NAME} "
-  #   for name, val of @docker-config.env
-  #     command += " -e #{name}=#{val}"
-  #   for name, port of @docker-config.publish
-  #     command += " --publish #{port}"
-  #   command += "
-  #     #{@docker-config.author}/#{@docker-config.image}
-  #     #{@docker-config.start-command}"
-
-  # generates the options used for Docker container creation
-  # formatted as JSON parameters as listed in Docker API documentation
   _generate-container-options: ->
     Env = for name, val of @docker-config.env
       "#{name}=#{val}"
@@ -76,13 +62,13 @@ class DockerRunner extends EventEmitter
       container-name: @docker-config.env.SERVICE_NAME
       stdout: {@write}
       stderr: {@write}
-    @running-service.run-image create-options: @_generate-container-options!
-      # ..on 'ended', (err, killed) ~>
-      #   | err and not killed   =>  @_on-container-error!
-      # ..wait @docker-config.start-text, ~>
-      #   @logger.log name: 'exo-run', text: "'#{@name}' is running"
-      #   @emit 'online'
-    console.log \yoooopt2
+    @running-service
+      ..run-image create-options: @_generate-container-options!
+      ..on 'ended', (err, killed) ~>
+        | err and not killed   =>  @_on-container-error!
+      ..wait @docker-config.start-text, ~>
+        @logger.log name: 'exo-run', text: "'#{@name}' is running"
+        @emit 'online'
 
 
   _check-dependency-containers: ~>

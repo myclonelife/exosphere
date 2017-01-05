@@ -30,28 +30,17 @@ class ObservableDockerRunner extends EventEmitter
   # The equivalent of 'docker run image'
   # Creates a Docker container and starts it
   run-image: ({create-options}) ->
-    console.log "running image"
-    console.log @image-name
-    console.log @container-name
     @killed = no
-    create-options =
-      Image: 'ubuntu'
-      Tty: true
-      Cmd: ['/bin/bash']
-    # create-options.Image = @image-name
-    # create-options.Name = @container-name
-    # create-options.Tty = false # must be false in order to demux stdout and stderr stream
-    # console.log create-options
-    @docker.create-container {Image: 'ubuntu', Tty: true, Cmd: ['/bin/bash']}, (err, container) ~>
-      | err => @emit 'ended', err, @killed
-      console.log err
-      console.log "container created"
-      console.log container
-    #   container.start {}, (err, data) -> console.log "started"
+    create-options.Image = @image-name
+    create-options.Name = @container-name
+    create-options.Tty = false # must be false in order to demux stdout and stderr stream
+    @docker.create-container create-options, (err, @container) ->
+      | err => @emit 'error', err, @killed
+      @start-container!
+
 
 
   start-container: ->
-    console.log "start container called"
     @killed = no
     @container?.attach {stream: true, stdout: true, stderr: true}, (err, stream) ~>
       | err => @emit 'ended', err, @killed
@@ -59,13 +48,6 @@ class ObservableDockerRunner extends EventEmitter
 
     @container?.start (err, data) ~>
       | err => @emit 'ended', err, @killed
-
-    # @docker.run @image-name, [], [@stdout-stream, @stderr-stream], {Tty:false}, create-options, (err, data, @container) ~>
-    #   | err => @emit 'ended', err, @killed
-    #   console.log "container:"
-    #   console.log @container
-    #   console.log data
-
 
 
   stop-container: ->
