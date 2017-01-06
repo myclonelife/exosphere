@@ -1,4 +1,5 @@
 require! {
+  'async'
   'child_process' : {spawn}
   'events' : {EventEmitter}
   'dockerode' : Docker
@@ -38,6 +39,27 @@ class ObservableDockerRunner extends EventEmitter
       | err => @emit 'error', err, @killed
       @start-container!
 
+
+  ensure-container-is-running: ({create-options}) ->
+    | @container-is-running! => return
+    | @container-exists      => @start-container!
+    | otherwise              => @run-image create-options
+
+
+
+  container-is-running: ->
+    @_containers-exits filters: JSON.stringify {status: 'running'}
+
+
+  # checks if container exists
+  # takes in optional filter parameters for contaienrs that are running, stopped, etc.
+  _containers-exits: ({filters=null}) ->
+    @docker.list-containers filters, (err, containers) ->
+      for container in containers
+        async.detect container.names, ((name, cb) ~> cb(null, name is @container-name)), (err, result) ->
+          | err => @emit 'error', err, @killed = no
+          if result then return true
+      false
 
 
   start-container: ->

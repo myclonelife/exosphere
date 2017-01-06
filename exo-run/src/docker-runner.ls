@@ -31,8 +31,8 @@ class DockerRunner extends EventEmitter
         console.log @docker-config
         wait-until (~> DockerHelper.get-docker-ip 'exocom'), 10, ~>
           @docker-config.env.EXOCOM_HOST = DockerHelper.get-docker-ip 'exocom'
-          @_check-dependency-containers!
-          @_run-container!
+          @_start-dependency-containers ~>
+            @_run-container!
 
 
   write: (text) ~>
@@ -50,6 +50,10 @@ class DockerRunner extends EventEmitter
       ExposedPorts
       Cmd
     }
+
+
+  _generate-dependency-container-options: (dependency-config) ->
+    # TODO: compile dependency options from service.yml
 
 
   _on-container-error: ~>
@@ -71,11 +75,19 @@ class DockerRunner extends EventEmitter
         @emit 'online'
 
 
-  _check-dependency-containers: ~>
-    for dependency of @docker-config.dependencies
-      app-dependency = "#{@docker-config.app-name}-#{dependency}"
-      DockerHelper.ensure-container-is-running app-dependency, dependency
-      @docker-config.env[dependency.to-upper-case!] = DockerHelper.get-docker-ip app-dependency
+  _start-dependency-containers: (done) ~>
+    dependency-containers = for dependency-name, dependency-config of @docker-config.dependencies
+      dependency-runner = new ObservableDockerRunner do
+        image-name: dependency-name
+        container-name: "#{@docker-config.app-name}-#{dependency-name}"
+      (cb) ~> dependency-runner.ensure-container-is-running @_generate-container-options dependency-config
+        ..wait dependency-config.dev['online-text'], cb!
+
+    async.series dependency-containers, (err) ->
+      for dependency-name of @docker-config.dependencies
+        @docker-config.env[dependency-name.to-upper-case!] = DockerHelper.get-docker-ip "#{@docker-config.app-name}-#{dependency-name}"
+      done err
+
 
 
 module.exports = DockerRunner
