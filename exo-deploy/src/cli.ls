@@ -9,6 +9,10 @@ require! {
 }
 
 module.exports = ->
+
+  if process.argv[2] is \help
+    return help!
+
   command-flag = process.argv[2]
   app-config = yaml.safe-load fs.read-file-sync(path.join(process.cwd!, 'application.yml'), 'utf8')
   logger = new Logger
@@ -32,5 +36,12 @@ module.exports = ->
     console.log "Deploying #{green app-config.name} #{cyan app-config.version}\n"
     docker
       ..dockerhub-push (err) ~>
-        | err => return logger.log name: 'exo-deploy', text: err.message
+        | err => return logger.log role: 'exo-deploy', text: err.message
         ..start!
+
+function help
+  help-text = """
+  Usage: #{cyan "exo deploy"}
+
+  """
+  console.log help-text

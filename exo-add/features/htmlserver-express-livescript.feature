@@ -10,22 +10,25 @@ Feature: scaffolding an ExpressJS HTML service written in LiveScript
 
   Scenario: scaffolding a LiveScript HTML server
     Given I am in the root directory of an empty application called "test app"
-    When running "exo-add service html-server test-author htmlserver-express-livescript html description" in this application's directory
+    When running "exo-add service web html-server test-author htmlserver-express-livescript html description" in this application's directory
     Then my application contains the file "application.yml" with the content:
       """
       name: test app
       description: Empty test application
       version: 1.0.0
 
+      bus:
+        type: exocom
+        version: 0.16.1
+
       services:
         public:
-          html-server:
-            docker_image: test-author/html-server
+          web:
             location: ./html-server
       """
     And my application contains the file "html-server/service.yml" with the content:
       """
-      title: html-server
+      type: html-server
       description: description
       author: test-author
 

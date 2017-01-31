@@ -9,12 +9,13 @@ Feature: interactive scaffolding
     Given I am in the root directory of an empty application called "test app"
     When starting "exo-add service" in this application's directory
     And entering into the wizard:
-      | FIELD                         | INPUT   |
-      | Name of the service to create | web     |
-      | Description                   | testing |
-      | Author                        | tester  |
-      | Type                          |         |
-      | Name of the data model        | web     |
+      | FIELD                         | INPUT       |
+      | Role of the service to create | web         |
+      | Type of the service to create | web         |
+      | Description                   | testing     |
+      | Author                        | tester      |
+      | Template                      |             |
+      | Name of the data model        | web         |
     And waiting until the process ends
     Then my application contains the file "application.yml" with the content:
       """
@@ -22,15 +23,18 @@ Feature: interactive scaffolding
       description: Empty test application
       version: 1.0.0
 
+      bus:
+        type: exocom
+        version: 0.16.1
+
       services:
         public:
           web:
-            docker_image: tester/web
             location: ./web
       """
     And my application contains the file "web/service.yml" containing the text:
       """
-      title: web
+      type: web
       description: testing
       author: tester
       """

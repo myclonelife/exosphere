@@ -28,12 +28,17 @@ Feature: Following the tutorial
       | Name of the application to create | todo-app           |
       | Description                       | A todo application |
       | Initial version                   |                    |
+      | ExoCom version                    | 0.16.3             |
     And waiting until the process ends
     Then my workspace contains the file "todo-app/application.yml" with content:
       """
       name: todo-app
       description: A todo application
       version: 0.0.1
+
+      bus:
+        type: exocom
+        version: 0.16.3
 
       services:
         public:
@@ -42,7 +47,7 @@ Feature: Following the tutorial
 
   Scenario: adding the html service
     Given I cd into "todo-app"
-    When starting "exo add service html-server test-author htmlserver-express-es6" in this application's directory
+    When starting "exo add service html-server html-server test-author htmlserver-express-es6" in this application's directory
     And entering into the wizard:
       | FIELD                  | INPUT                           |
       | Description            | serves HTML UI for the test app |
@@ -54,27 +59,42 @@ Feature: Following the tutorial
       description: A todo application
       version: 0.0.1
 
+      bus:
+        type: exocom
+        version: 0.16.3
+
       services:
         public:
           html-server:
-            docker_image: test-author/html-server
             location: ./html-server
       """
     And my application contains the file "html-server/service.yml" with the content:
     """
-    title: html-server
+    type: html-server
     description: serves HTML UI for the test app
     author: test-author
 
+    # defines the commands to make the service runnable:
+    # install its dependencies, compile it, etc.
     setup: yarn install
+
+    # defines how to boot up the service
     startup:
+
+      # the command to boot up the service
       command: node app
+
+      # the string to look for in the terminal output
+      # to determine when the service is fully started
       online-text: HTML server is running
 
+    # the messages that this service will send and receive
     messages:
       sends:
       receives:
 
+    # other services this service needs to run,
+    # e.g. databases
     dependencies:
 
     docker:
@@ -97,14 +117,14 @@ Feature: Following the tutorial
 
 
   Scenario: adding the todo service
-    When starting "exo add service todo-service test-author exoservice-es6-mongodb todo" in this application's directory
+    When starting "exo add service todo-service todo-service test-author exoservice-es6-mongodb todo" in this application's directory
     And entering into the wizard:
       | FIELD       | INPUT                   |
       | Description | stores the todo entries |
     And waiting until the process ends
     Then my application contains the file "todo-service/service.yml" with the content:
       """
-      title: todo-service
+      type: todo-service
       description: stores the todo entries
       author: test-author
 
@@ -203,7 +223,7 @@ Feature: Following the tutorial
       """
     And the file "html-server/service.yml":
       """
-      title: html-server
+      type: html-server
       description: serves HTML UI for the test app
       author: test-author
 

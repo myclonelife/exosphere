@@ -3,7 +3,7 @@ require! {
   './docker-helper' : DockerHelper
   './observable-docker-runner' : ObservableDockerRunner
   './call-args'
-  './compile-service-messages'
+  './compile-service-routes'
   './normalize-path'
   './kill-child-processes'
   'path'
@@ -12,7 +12,7 @@ require! {
 
 module.exports = {
   call-args
-  compile-service-messages
+  compile-service-routes
   Logger
   DockerHelper
   ObservableDockerRunner

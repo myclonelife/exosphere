@@ -25,13 +25,13 @@ class DockerHub
 
 
   _push-image: (image, done) ~>
-    @logger.log name: 'exo-deploy', text: "pushing #{image.name} to DockerHub..."
+    @logger.log role: 'exo-deploy', text: "pushing #{image.name} to DockerHub..."
     new ObservableProcess("docker push #{image.author}/#{image.name}",
                           stdout: {@write}
                           stderr: {@write})
       ..on 'ended', (exit-code) ~>
         | exit-code  =>  return done new Error("#{image.name} could not be pushed to DockerHub")
-        @logger.log name: 'exo-deploy', text: "#{image.name} pushed to DockerHub"
+        @logger.log role: 'exo-deploy', text: "#{image.name} pushed to DockerHub"
         done!
 
 
@@ -39,16 +39,16 @@ class DockerHub
     names = []
     for service-type of @app-config.services
       for name, config of @app-config.services[service-type]
+        | !config.location  =>  continue
         service-config = yaml.safe-load fs.read-file-sync(path.join(process.cwd!, config.location, 'service.yml'), 'utf8')
         names.push do
           author: service-config.author
-          name: dashify service-config.title
-          #TODO: get image name if location is docker on dockerhub
+          name: dashify service-config.type
     names
 
 
   write: (text) ~>
-    @logger.log {name: 'exo-deploy', text, trim: no}
+    @logger.log {role: 'exo-deploy', text, trim: no}
 
 
 module.exports = DockerHub

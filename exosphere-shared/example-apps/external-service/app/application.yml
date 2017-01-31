@@ -2,8 +2,12 @@ name: application with an external service
 description: skeleton app using only an external service
 version: '1.0.0'
 
+bus:
+  type: exocom
+  version: 0.21.3
+
+  
 services:
   public:
     web:
       location: ../web-service
-      docker_image: exospheredev/simple-app-web-service

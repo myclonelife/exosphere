@@ -2,13 +2,15 @@ name: Example application
 description: Demonstrates basic Exosphere application startup
 version: '1.0'
 
+bus:
+  type: exocom
+  version: 0.21.3
+
 services:
   public:
     web:
       location: ./web-server
-      docker_image: exospheredev/test-web-app-server
   private:
     users:
       namespace: mongo
       location: ./mongo-service
-      docker_image: exospheredev/test-mongo-db-service

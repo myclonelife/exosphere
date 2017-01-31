@@ -20,39 +20,49 @@ service = ->
   inquirer.prompt(questions).then (answers) ->
     data := merge data, answers
     src-path = path.join templates-path, 'add-service', data.template-name
-    target-path = path.join process.cwd!, '..' data.service-name
+    target-path = path.join process.cwd!, '..' data.service-type
     try
       app-config = yaml.safe-load fs.read-file-sync('application.yml', 'utf8')
     catch error
-      throw new Error "Creation of service '#{data.service-name}' has failed."
+      throw new Error "Creation of service '#{data.service-role}' has failed."
     data.app-name = app-config.name
     tmplconv.render(src-path, target-path, {data}).then ->
       options =
         file: 'application.yml'
         root: 'services.public'
-        key: data.service-name
-        value: {location: "../#{data.service-name}", docker_image: "#{data.author}/#{data.service-name}"}
+        key: data.service-role
+        value: {location: "../#{data.service-type}"}
       yaml-cutter.insert-hash options, N ->
         console.log green "\ndone"
 
 
 
-function service-names
+function service-roles
   fs.readdir-sync path.join templates-path, 'add-service'
 
 
 function parse-command-line command-line-args
   data = {}
   questions = []
-  [_, _, _, service-name, author, template-name, model-name, ...description] = command-line-args
+  [_, _, _, service-role, service-type, author, template-name, model-name, ...description] = command-line-args
 
-  if service-name
-    data.service-name = service-name
+  if service-role
+    data.service-role = service-role
   else
     questions.push do
-      message: 'Name of the service to create'
+      message: 'Role of the service to create'
       type: 'input'
-      name: 'serviceName'
+      name: 'serviceRole'
+      filter: (input) -> input.trim!
+      validate: (input) -> input.length > 0
+
+  if service-type
+    data.service-type = service-type
+  else
+    questions.push do
+      message: 'Type of the service to create'
+      type: 'input'
+      name: 'serviceType'
       filter: (input) -> input.trim!
       validate: (input) -> input.length > 0
 
@@ -60,10 +70,10 @@ function parse-command-line command-line-args
     data.template-name = template-name
   else
     questions.push do
-      message: 'Type:'
+      message: 'Template:'
       type: 'list'
       name: 'templateName'
-      choices: service-names!
+      choices: service-roles!
 
   if model-name
     data.model-name = model-name

@@ -2,11 +2,13 @@ name: Application with end-to-end tests
 description: Allows to run application tests
 version: 1.0
 
+bus:
+  type: exocom
+  version: 0.21.3
+
 services:
   public:
     tweets-service:
       location: ./tweets-service
-      docker_image: exospheredev/another-service-with-failing-tests
     users-service:
       location: ./users-service
-      docker_image: exospheredev/a-service-with-failing-tests

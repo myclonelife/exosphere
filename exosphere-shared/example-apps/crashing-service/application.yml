@@ -2,11 +2,13 @@ name: Example application
 description: Demonstrates basic Exosphere application startup
 version: '1.0'
 
+bus:
+  type: exocom
+  version: 0.21.3
+
 services:
   public:
     crasher:
       location: ./crasher
-      docker_image: exospheredev/test-service-that-crashes-on-startup
     runner:
       location: ./runner
-      docker_image: exospheredev/test-service-that-keeps-running

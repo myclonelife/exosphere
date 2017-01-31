@@ -1,6 +1,6 @@
 require! {
   './app-cloner' : AppCloner
-  'chalk' : {cyan, green, red, yellow}
+  'chalk' : {red, cyan, blue}
   'js-yaml' : yaml
   '../../exosphere-shared' : {Logger}
   'path'
@@ -9,25 +9,19 @@ require! {
 
 clone = ->
 
+  if process.argv[2] is "help"
+    return help!
+
   console.log 'We are going to clone an Exosphere application!\n'
 
   [_, _, repo-origin] = process.argv
   return missing-origin! unless repo-origin
-  repo = repo-info repo-origin
+  repository = repo-info repo-origin
 
   logger = new Logger
 
-  new AppCloner repo
-    ..on 'output', (data) -> logger.log data
-    ..on 'app-config-ready', (app-config) -> logger.set-colors Object.keys(app-config.services)
-    ..on 'app-verification-failed', (err) -> logger.log name: 'exo-clone', text: red "Error: application could not be verified.\n" + red err
-    ..on 'app-clone-success' -> logger.log name: 'exo-clone', text: "#{repo.name} Application cloned into #{repo.path}"
-    ..on 'app-clone-failed', -> logger.log name: 'exo-clone', text: red "Error: cloning #{repo.name} failed"
-    ..on 'service-clone-fail', (name) -> logger.log name: name, text: red "Service cloning failed"
-    ..on 'service-invalid', (name) -> logger.log name: name, text: red "#{name} is an invalid service"
-    ..on 'service-clones-failed', -> logger.log name: 'exo-clone', text: red "Some services failed to clone or were invalid Exosphere services.\nFailed"
-    ..on 'all-clones-successful', -> logger.log name: 'exo-clone', text: green "Services successfully cloned.\nDone"
-    ..on 'done', -> logger.log name: 'exo-clone', text: 'Done'
+  new AppCloner {repository, logger}
+    ..on 'done', -> logger.log role: 'exo-clone', text: 'Done'
     ..start!
 
 
@@ -49,5 +43,14 @@ function print-usage
   console.log 'Usage: exo clone <origin>\n'
 
 
+function help
+  help-message =
+    """
+    \nUsage: #{cyan 'exo clone'} #{blue '[<repository>]'}
+
+    Clones an exosphere application hosted on git, including all required services
+    This command should be called from an empty working directory.
+    """
+  console.log help-message
 
 module.exports = clone

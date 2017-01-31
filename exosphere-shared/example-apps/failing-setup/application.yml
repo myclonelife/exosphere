@@ -2,11 +2,13 @@ name: Example application with broken setup script
 description: For testing errors during setup
 version: '1.0'
 
+bus:
+  type: exocom
+  version: 0.21.3
+
 services:
   public:
     crasher:
       location: ./crasher
-      docker_image: exospheredev/test-service-that-crashes-on-setup
     runner:
       location: ./runner
-      docker_image: exospheredev/working-setup-script-service

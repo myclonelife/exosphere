@@ -10,22 +10,25 @@ Feature: create a reusable service
 
   Scenario: create reusable service
     Given I am in the root directory of an empty application called "empty app"
-    When executing "exo-create service users-service test-author exoservice-es6-mongodb user manage users"
+    When executing "exo-create service users users-service test-author exoservice-es6-mongodb user manage users"
     Then my application contains the file "application.yml" with the content:
       """
       name: empty app
       description: Empty test application
       version: 1.0.0
 
+      bus:
+        type: exocom
+        version: 0.16.1
+
       services:
         public:
-          users-service:
-            docker_image: test-author/users-service
+          users:
             location: ../users-service
       """
     And my workspace contains the file "../users-service/service.yml" with content:
       """
-      title: users-service
+      type: users-service
       description: manage users
       author: test-author
 
