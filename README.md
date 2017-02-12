@@ -21,6 +21,7 @@ higher [productivity and fun](website/benefits.md#productivity),
 amazing [testing](website/benefits.md#testing),
 and first-class [cloud](website/benefits.md#cloud) support,
 all in their favorite language.
+[Read more](website/benefits.md)
 
 
 __Get Started:__
