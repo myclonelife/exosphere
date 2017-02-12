@@ -12,14 +12,14 @@ a wide variety of intelligent cloud, mobile, and IoT application ecosystems
 with unparalleled efficiency and fun.
 
 Business owners benefit from
-quicker [innovation](website/benefits.md#innovation),
-[scaling](website/benefits.md#scale) up prototypes into production-grade solutions,
-at [lower IT cost](website/benefits.md#cost)
-and more effective utilization of a wider degree of [engineering talent](website/benefits.md#talent).
-Developers benefit from pain-free [micro-services](website/benefits.md#micro-services),
-higher [productivity and fun](website/benefits.md#productivity),
-amazing [testing](website/benefits.md#testing),
-and first-class [cloud](website/benefits.md#cloud) support,
+quicker innovation,
+scaling,
+at lower IT cost
+and more effective utilization of a wider degree of engineering talent.
+Developers benefit from pain-free micro-services,
+higher productivity and fun,
+amazing testing,
+and first-class cloud support,
 all in their favorite language.
 [read more...](website/benefits.md)
 
