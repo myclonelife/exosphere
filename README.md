@@ -17,7 +17,7 @@ seamless scaling of ideas into production-grade solutions,
 at lower cost.
 Developers benefit from
 pain-free micro-services,
-higher productivity and fun for a wider degree of engineering talent,
+higher productivity and fun for a wider degree of talent,
 amazing testing,
 and first-class cloud support,
 all in their favorite language.
