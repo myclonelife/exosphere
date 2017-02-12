@@ -21,7 +21,7 @@ higher productivity and fun for a wider degree of talent,
 amazing testing,
 and first-class cloud support,
 all in their favorite language.
-[more about benefits](website/benefits.md)
+[[more about benefits]](website/benefits.md)
 
 
 __Get Started:__
