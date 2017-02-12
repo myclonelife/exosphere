@@ -6,6 +6,8 @@
 
 __Exosphere makes micro-services easy and fun__
 
+__Write modular cloud and AI-native applications in your favorite language__
+
 Exosphere is a high-level framework
 for building, testing, deploying, and operating
 a wide variety of micro-service application ecosystems
