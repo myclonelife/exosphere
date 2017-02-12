@@ -18,8 +18,9 @@ at lower total cost and risk,
 giving you a competitive advantage in today's fast-moving markets.
 
 Developers benefit from
-easy and intuitive access to a modern stack that makes micro-services pain free
-and leads to higher productivity and fun for a wider degree of talent,
+easy and intuitive access to a modern, productive technology stack,
+pain free micro-services
+more fun at work for a wider degree of talent,
 amazing testing
 and first-class cloud support,
 available in their favorite language.
