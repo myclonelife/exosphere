@@ -25,7 +25,7 @@ more fun at work for a wider degree of talent and experience levels,
 amazing testing
 and first-class cloud support,
 available in their favorite language.
-[[more tech benefits]](website/benefits.md#developers)
+[[read more...]](website/benefits.md#developers)
 
 
 __Get Started:__
