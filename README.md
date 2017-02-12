@@ -16,7 +16,6 @@ Business owners benefit from [lower IT cost](website/benefits.md#cost),
 faster and less risky [innovation](website/benefits.md#innovation) and time-to market for new products,
 more effective utilization of a wider variety of [engineering talent](website/benefits.md#talent),
 and the ability to [scale](website/benefits.md#scale) up their business.
-
 Developers benefit from pain-free [micro-services](website/benefits.md#micro-services),
 higher [productivity and fun](website/benefits.md#productivity),
 amazing [testing](website/benefits.md#testing),
