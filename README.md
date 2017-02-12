@@ -14,7 +14,8 @@ with unparalleled efficiency and fun.
 Business owners benefit from
 faster innovation and
 seamless scaling of ideas into maintainable production-grade solutions
-at lower total cost.
+at lower total cost and risk,
+giving you a competitive advantage in today's fast-moving markets.
 Developers benefit from
 pain-free micro-services,
 higher productivity and fun for a wider degree of talent,
