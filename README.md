@@ -16,7 +16,8 @@ quicker innovation,
 seamless scaling up ideas into production-grade solutions,
 at lower cost
 and more effective utilization of a wider degree of engineering talent.
-Developers benefit from pain-free micro-services,
+Developers benefit from
+pain-free micro-services,
 higher productivity and fun,
 amazing testing,
 and first-class cloud support,
