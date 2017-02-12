@@ -18,11 +18,11 @@ at lower total cost and risk,
 giving you a competitive advantage in today's fast-moving markets.
 
 Developers benefit from
-pain-free micro-services,
-higher productivity and fun for a wider degree of talent,
-amazing testing,
+easy and intuitive access to a modern stack that makes micro-services pain free
+and leads to higher productivity and fun for a wider degree of talent,
+amazing testing
 and first-class cloud support,
-all in their favorite language.
+available in their favorite language.
 [[more about benefits]](website/benefits.md)
 
 
