@@ -8,8 +8,8 @@ __Exosphere makes micro-services easy and fun__
 
 Exosphere is a high-level framework
 for building, testing, deploying, operating, and evolving
-a wide variety of cloud, mobile, and IoT application ecosystems
-with unparalleled productivity and fun
+a wide variety of cloud, mobile, and IoT application ecosystems.
+With unparalleled productivity and fun
 out of polyglot micro-services.
 
 Benefits for business people:
