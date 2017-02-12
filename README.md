@@ -12,7 +12,7 @@ a wide variety of intelligent cloud, mobile, and IoT application ecosystems
 with unparalleled efficiency and fun.
 
 Business owners benefit from
-quicker innovation,
+faster innovation,
 seamless scaling of ideas into production-grade solutions,
 at lower cost.
 Developers benefit from
