@@ -16,6 +16,7 @@ faster innovation and
 seamless scaling of ideas into maintainable production-grade solutions
 at lower total cost and risk,
 giving you a competitive advantage in today's fast-moving markets.
+[[more business benefits]](website/benefits.md#business)
 
 Developers benefit from
 easy and intuitive access to a modern, productive technology stack,
@@ -24,7 +25,7 @@ more fun at work for a wider degree of talent and experience levels,
 amazing testing
 and first-class cloud support,
 available in their favorite language.
-[[more about benefits]](website/benefits.md)
+[[more tech benefits]](website/benefits.md#developers)
 
 
 __Get Started:__
