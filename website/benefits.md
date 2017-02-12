@@ -4,26 +4,26 @@ This page outlines more details about how Exosphere can make sense for you.
 
 ### Business benefits
 
-__lower cost and risk__ of development, operation, and maintenance.
+* __lower cost and risk__ of development, operation, and maintenance:
 
-Exosphere allows you to quickly develop and launch functionaly prototypes
-and evolve them into production-grade applications
-without the dreaded Big Rewrite.
+  Exosphere allows you to quickly develop and launch functionaly prototypes
+  and evolve them into production-grade applications
+  without the dreaded Big Rewrite.
 
-You start by plugging together pre-existing back-end and UI components like Lego bricks,
-customize the UI, and get to market.
-As you grow and refine your business,
-you can productize or replace generic components with custom-build ones
-in a seamless way that does reduce technical debt in your code base.
+  You start by plugging together pre-existing back-end and UI components like Lego bricks,
+  customize the UI, and get to market.
+  As you grow and refine your business,
+  you can productize or replace generic components with custom-build ones
+  in a seamless way that does reduce technical debt in your code base.
 
-You save cost because many of the currently difficult things
-are heavily automated and can get done
-by smaller teams with less training.
-Your developers can reuse up to 80% of the code of one application in other applications.
-This means lower risk because even if an investment fails,
-large parts of the developed technology can be used in other projects,
-and new projects are much faster and cheaper to build out of pre-existing components
-And Exosphere is open, free, and extensible.
+  You save cost because many of the currently difficult things
+  are heavily automated and can get done
+  by smaller teams with less training.
+  Your developers can reuse up to 80% of the code of one application in other applications.
+  This means lower risk because even if an investment fails,
+  large parts of the developed technology can be used in other projects,
+  and new projects are much faster and cheaper to build out of pre-existing components
+  And Exosphere is open, free, and extensible.
 
 Current tech stacks and code bases are so complicated
 that only the top 10-20% of the worldwide engineering talent can work on them
