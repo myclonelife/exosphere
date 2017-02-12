@@ -13,7 +13,7 @@ with unparalleled efficiency and fun.
 
 Business owners benefit from
 faster innovation and
-seamless scaling of ideas into production-grade solutions
+seamless scaling of ideas into maintainable production-grade solutions
 at lower total cost.
 Developers benefit from
 pain-free micro-services,
