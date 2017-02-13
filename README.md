@@ -13,8 +13,8 @@ with unparalleled efficiency and fun.
 
 Business owners benefit from
 faster innovation and
-seamless scaling of ideas into maintainable production-grade solutions
-at lower total cost and risk,
+seamless scaling of prototypes into maintainable production-grade solutions.
+This happens at lower overall cost and risk,
 giving you a competitive advantage in today's fast-moving markets.
 [[read more]](website/benefits.md#business)
 
