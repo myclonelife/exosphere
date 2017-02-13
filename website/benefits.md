@@ -55,23 +55,45 @@ This page provides more details how Exosphere can help you succeed.
 ## Technology benefits
 
 
-- use micro-services in a way that works,
-  because the stack is designed from the ground up for them
-- leading-edge high-tech,
-  packaged into a toolkit that is optimized for
-  human ergonomics, productivity, and delight.
+- pain-free __micro-services:__
+  Most existing micro-service frameworks have been developed by
+  very seasoned teams at top-tier tech companies,
+  designed for dealing with extremely large code bases and massive scale.
+  Often they have evolved out of existing architectures,
+  and are designed for extreme-scale operation by seasoned developers and ops teams.
+  Exosphere is one of the first frameworks
+  that is designed from the ground up for micro-services,
+  for getting started easily, by smaller and fast-moving teams.
+  Everybody who has tried microservices has found that they have benefits,
+  but quickly become painful because there are so many more moving pieces in production,
+  and everything must be heavily automated.
+  Exosphere provides this level of automation and best practices,
+  and contains everything needed to scale up to levels sufficient for 99% of all businesses in the world.
 
-- the framework goes the extra mile for its users
-  by automating the boilerplate
-- offer highly productive, opinionated conventions on top of a generic foundation
+- __human friendly:__
+  Exosphere contains very modern technology,
+  packaged up into a solution that is optimized for
+  human ergonomics, productivity, and fun.
 
-- develop against explicit
+- __automated:__
+  the framework goes the extra mile so that its users don't have to.
+  It automates most of the boilerplate and best practices.
+
+- __efficient and flexible:__
+  Exosphere offers highly productive, opinionated conventions
+  on top of a generic foundation
+
+- __goals driven:__
+  Exosphere provides mechanisms to develop against explicit
   functional, performance, security, and reliability requirements<sup>&#42;</sup>
-- data-center aware, runs on top of public and private cloud environments
+
+- __multi-cloud:__
+  data-center aware, runs on top of public and private cloud environments
   like [AWS](https://aws.amazon.com),
   [Google Cloud](https://cloud.google.com),
   [Azure](https://azure.microsoft.com),
   [DCOS](https://dcos.io), etc<sup>&#42;</sup>
+
 - marketplace for reusable services<sup>&#42;</sup>
 
 
