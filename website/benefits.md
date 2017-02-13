@@ -6,8 +6,8 @@ This page provides more details how Exosphere can help you succeed.
 ### Business benefits
 
 * __faster innovation:__
-  With Exosphere you quickly develop and launch fully functional prototypes
-  of cloud applications
+  With Exosphere you quickly develop and launch
+  fully functional prototypes of cloud applications,
   by plugging together existing front-end and back-end building blocks
   like Lego bricks.
   As the prototype solidifies and gains traction,
