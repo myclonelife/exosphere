@@ -5,16 +5,25 @@ This page provides more details how Exosphere can help you succeed.
 
 ### Business benefits
 
-* __innovation:__
+* __faster innovation:__
   With Exosphere you quickly develop and launch fully functional prototypes
   of cloud applications
   by plugging together existing front-end and back-end building blocks
   like Lego bricks.
   As the prototype solidifies and gains traction,
   you can gradually evolve it into a production-grade application
-  by replacing one service at a time with more specific ones,
+  by replacing one service at a time with more specific implementations,
   without the dreaded [Big Rewrite](http://onstartups.com/tabid/3339/bid/2596/Why-You-Should-Almost-Never-Rewrite-Your-Software.aspx),
   and while keeping technical debt contained and manageable.
+
+* __risk reduction:__
+  Your developers can reuse up to 80% of the code of one Exosphere application in other applications.
+  This means investments never really fail,
+  because even if a particular application is not successful,
+  its large parts of the developed technology live on in other projects.
+  Exosphere also allows more agile workflows.
+  You start with a [walking skeleton](http://blog.codeclimate.com/blog/2014/03/20/kickstart-your-next-project-with-a-walking-skeleton),
+  and add
 
 * __cost savings:__
   Exosphere saves you cost in several ways.
@@ -33,12 +42,6 @@ This page provides more details how Exosphere can help you succeed.
   it automated many repetitive tasks,
   and provides powerful and easy to use devops tools.
   This means you need less specialized Ops personnel.
-
-* __lower risk:__
-  Your developers can reuse up to 80% of the code of one application in other applications.
-  This means investments never really fail,
-  because even if a particular application is not successful,
-  you can reuse large parts of the developed technology in other projects.
 
 * __free and open:__
   Exosphere is open, free, and extensible,
