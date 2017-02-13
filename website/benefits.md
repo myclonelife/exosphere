@@ -13,7 +13,7 @@ This page provides more details how Exosphere can help you succeed.
   As the prototype solidifies and gains traction,
   you can gradually evolve it into a production-grade application
   by replacing one service at a time with more specific implementations,
-  without the dreaded [Big Rewrite](http://onstartups.com/tabid/3339/bid/2596/Why-You-Should-Almost-Never-Rewrite-Your-Software.aspx),
+  This avoids the dreaded [Big Rewrite](http://onstartups.com/tabid/3339/bid/2596/Why-You-Should-Almost-Never-Rewrite-Your-Software.aspx),
   and while keeping technical debt contained and manageable.
 
 * __risk reduction:__
