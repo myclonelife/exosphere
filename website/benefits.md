@@ -73,7 +73,7 @@ This page provides more details how Exosphere can help you succeed.
 - __human friendly:__
   Exosphere contains very modern technology,
   packaged up into a solution that is optimized for
-  human ergonomics, productivity, and fun.
+  human ergonomics, being intuitive, productive, and fun.
 
 - __automated:__
   the framework goes the extra mile so that its users don't have to.
