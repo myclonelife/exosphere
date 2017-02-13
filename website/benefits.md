@@ -1,20 +1,20 @@
 # Benefits
 
-This page outlines more details about how Exosphere can make sense for you.
+This page provides more details how Exosphere can help you succeed.
+
 
 ### Business benefits
 
-* __lower cost and risk__ of development, operation, and maintenance:
-
-  Exosphere allows you to quickly develop and launch functionaly prototypes
-  and evolve them into production-grade applications
-  without the dreaded Big Rewrite.
-
-  You start by plugging together pre-existing back-end and UI components like Lego bricks,
-  customize the UI, and get to market.
-  As you grow and refine your business,
-  you can productize or replace generic components with custom-build ones
-  in a seamless way that does reduce technical debt in your code base.
+* __lower cost and risk__:
+  Exosphere allows you to quickly develop and launch fully functional prototypes
+  of cloud applications
+  by plugging together existing front-end and back-end building blocks
+  like Lego bricks.
+  This allows you to iterate fast and try out many ideas.
+  As your product solidifies and gains traction,
+  you can gradually evolve these prototypes into production-grade applications
+  without the dreaded [Big Rewrite](http://onstartups.com/tabid/3339/bid/2596/Why-You-Should-Almost-Never-Rewrite-Your-Software.aspx),
+  and while keeping technical debt contained and manageable.
 
   You save cost because many of the currently difficult things
   are heavily automated and can get done
