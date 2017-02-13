@@ -20,11 +20,11 @@ giving you a competitive advantage in today's fast-moving markets.
 
 Developers benefit from
 easy and intuitive access to a modern, productive technology stack.
-It offers pain free micro-services
-more fun at work for a wider degree of talent and experience levels,
+It offers pain free micro-services,
+more productivity and fun for a wider degree of talent and experience levels,
 amazing testing
 and first-class cloud support,
-available in their favorite language.
+and you can use your favorite language.
 [[read more]](website/benefits.md#developers)
 
 
