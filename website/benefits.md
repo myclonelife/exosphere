@@ -1,6 +1,6 @@
 # Benefits
 
-This page provides more details how Exosphere can help you succeed.
+This page provides more details on how Exosphere can help you succeed.
 
 
 ### Business benefits
@@ -55,7 +55,7 @@ This page provides more details how Exosphere can help you succeed.
   as you scale up your business and IT operations.
 
 
-## Technology benefits
+### Technology benefits
 
 
 - pain-free __micro-services:__
